@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check if goimports available
-        uses: goimports -v
+        uses: goimports -w -l ./*.go
 
       - name: Build
         run: |
