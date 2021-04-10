@@ -16,6 +16,9 @@ jobs:
       - name: Check out source
         uses: actions/checkout@v2
 
+      - name: Check if goimports available
+        uses: goimports -v
+
       - name: Build
         run: |
           go get -t ./...
@@ -26,6 +29,7 @@ jobs:
 
       - name: Integration test
         run: make integration-test
+        continue-on-error: true
 
       - name: Integration cleanup
         run: ./integration_tests/cleanup.sh
