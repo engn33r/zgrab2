@@ -16,6 +16,9 @@ jobs:
       - name: Check out source
         uses: actions/checkout@v2
 
+      - name: Install goimports
+        run: sudo apt install golang-golang-x-tools
+
       - name: Check if goimports available
         run: goimports -w -l ./*.go
 
