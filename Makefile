@@ -14,11 +14,8 @@ all: zgrab2
 # Test currently only runs on the modules folder because some of the 
 # third-party libraries in lib (e.g. http) are failing.
 test:
-	pwd
 	cd lib/output/test && go test -v ./... && cd ../../..
-	pwd
 	cd modules && go test -v ./...
-	pwd
 	cd ..
 
 gofmt:
