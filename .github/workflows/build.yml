@@ -19,9 +19,6 @@ jobs:
       - name: Install goimports
         run: sudo apt install golang-golang-x-tools
 
-      - name: Check if goimports available
-        run: goimports -w -l ./*.go
-
       - name: Build
         run: |
           go get -t ./...
